@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id code:</strong>
+  <%= @device.id_code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @device.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @device.price %>
+</p>
+
+<p>
+  <strong>Vendor:</strong>
+  <%= @device.vendor %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @device.status %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @device.location %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @device.date %>
+</p>
+
+<%= link_to 'Edit', edit_device_path(@device) %> |
+<%= link_to 'Back', devices_path %>

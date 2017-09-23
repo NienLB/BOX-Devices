@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_code: MyText
+  name: MyString
+  price: 9.99
+  vendor: MyString
+  status: false
+  location: MyText
+  date: 2017-09-23
+
+two:
+  id_code: MyText
+  name: MyString
+  price: 9.99
+  vendor: MyString
+  status: false
+  location: MyText
+  date: 2017-09-23
