@@ -1,0 +1,31 @@
+<p id="notice"><%=notice%></p>
+
+<div class="container">
+<h1>STATUS DEVICES IN BOX</h1>
+
+
+
+	<div class="entry">
+		<table>
+			<thead>
+				<tr>
+					<th></th>
+					<th><%= Date.today.month %></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<% @devices.each do |device| %>
+			
+				<tr>
+					<td> <%=  device.name %></td>
+					<td> <%= device.status %></td>
+				</tr>
+				<% end %>
+			</tbody>
+
+		</table>
+
+	</div>
+
+</div>

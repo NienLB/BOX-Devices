@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+nav.navbar.navbar-default{
+	background-color: black;
+
+	a{
+		padding: 0px;
+	}
+
+}

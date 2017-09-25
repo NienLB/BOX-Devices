@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BoxDevices</title>
+    <title>Devices Of BOXSHOP</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,25 @@
   </head>
 
   <body>
+  	<nav class="navbar navbar-default">
+  		<div class="container">
+  			<div class="navbar-header">
+
+  				<a class="navbar-brand" href="#">
+  					<%= image_tag 'logo.png',alt: 'BOXSHOP' %>
+  				</a>
+  				
+  			</div>
+  		</div>
+  	</nav>
+
+
+
+
     <%= yield %>
   </body>
+
+	<footer class="container-fluid bg-4 text-right">
+  		<p>Boxshop Devices <a href="https://www.w3schools.com">Boxshop.vn</a></p> 
+	</footer>
 </html>
