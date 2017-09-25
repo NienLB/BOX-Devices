@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Devices</h1>
+<h1>List Of Devices</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Id code</th>
+      <th>Device code</th>
       <th>Name</th>
       <th>Price</th>
       <th>Vendor</th>
@@ -26,9 +26,13 @@
         <td><%= device.status %></td>
         <td><%= device.location %></td>
         <td><%= device.date %></td>
-        <td><%= link_to 'Show', device %></td>
-        <td><%= link_to 'Edit', edit_device_path(device) %></td>
-        <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+        <td class="list_actions">
+          <dd> <%= link_to 'Show', device %> </dd>
+          <dd> <%= link_to 'Edit', edit_device_path(device) %></dd>
+          <dd> <%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %> </dd>
+        </td>
       </tr>
     <% end %>
   </tbody>
