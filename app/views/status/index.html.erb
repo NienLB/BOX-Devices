@@ -17,9 +17,11 @@
 			</thead>
 
 			<tbody>
+				<% cache @devices do %> 
 				<% @devices.each do |device| %>
-			
+				<% cache device do %>
 				<tr>
+
 					<td> <%= device.name %></td>
 					<td id='img_check'>
 						<%= display_status(device.status)%>
@@ -27,6 +29,8 @@
 					 <td> <%= link_to 'Edit', edit_device_path(device) %>
 					 </td>
 				</tr>
+				<% end %>
+				<% end %>
 				<% end %>
 			</tbody>
 
