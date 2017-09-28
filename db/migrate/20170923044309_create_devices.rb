@@ -3,7 +3,7 @@ class CreateDevices < ActiveRecord::Migration[5.0]
     create_table :devices do |t|
       t.text :id_code
       t.string :name
-      t.decimal :price, precision: 8, scale: 2
+      t.decimal :price
       t.string :vendor
       t.boolean :status
       t.text :location

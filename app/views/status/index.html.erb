@@ -2,33 +2,34 @@
 
 <div class="container">
 <h1>STATUS DEVICES IN BOX</h1>
+<h3> Currency Status - <%= Date.today %></h3>
 
 
 
 	<div class="entry">
-		<table>
+		<table class="table">
 			<thead>
 				<tr>
 					<th></th>
-					<th>Thang : <%= Date.today.month %></th>
-						<th></th>
+					<th>Name</th>
+					<th>Location</th>
+					<th></th>
 				</tr>
-
 			</thead>
 
 			<tbody>
 				<% cache @devices do %> 
 				<% @devices.each do |device| %>
-				<% cache device do %>
-				<tr>
-
-					<td> <%= device.name %></td>
-					<td id='img_check'>
-						<%= display_status(device.status)%>
-					 </td>
-					 <td> <%= link_to 'Edit', edit_device_path(device) %>
-					 </td>
-				</tr>
+					<% cache device do %>
+					<tr>
+						<td id='img_check'>
+							<%= display_status(device.status)%></td>
+						<td> <%= device.name %></td>
+						<td> <%= device.location %>
+						 </td>
+						 <td> <%= link_to 'Show',device%>
+						 </td>
+					</tr>
 				<% end %>
 				<% end %>
 				<% end %>

@@ -4,27 +4,14 @@
 
 	.entry{
 
-		table{
-		width: 100%;
-		border: 1px solid Gray;
+		table tbody tr td:first-child{
+			text-align: center;
+		}
 		
-		thead{
-			background-color: gray;
-			color: white;
-			border-bottom : 2px solid Gray;
-		}
-		}
 		#img_check img{
 			height: 20px;
 			width: 20px;
 		}
-			tbody { 
-	tr{
-		border: 1px solid Gray;
-		height: 40px;
-	
-	}
-}
 
 
 	}

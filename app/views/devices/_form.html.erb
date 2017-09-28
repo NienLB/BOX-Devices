@@ -12,44 +12,45 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <label>  Code device : </label>
-    <%= f.text_field :id_code %>
-    
+<div class="form_control">
+  <div class="field row">
+    <div class="col-sm-2"><%= f.label :id_code %></div>
+    <div class="col-sm-4"><%= f.text_field :id_code %> </div>
   </div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, rows: 20 %>
+  <div class="field row">
+    <div class="col-md-2"><%= f.label :name %></div>
+    <div class="col-md-4"><%= f.text_field :name, rows: 20 %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price, rows: 20 %>
+  <div class="field row">
+    <div class="col-md-2"><%= f.label :price %></div>
+    <div class="col-md-4"><%= f.text_field :price, rows: 20 %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :vendor %>
-    <%= f.text_field :vendor, rows: 20 %>
+  <div class="field row">
+    <div class="col-md-2"><%= f.label :vendor %></div>
+    <div class="col-md-4"><%= f.text_field :vendor, rows: 20 %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.check_box :status %>
+  <div class="field row">
+    <div class="col-md-2"><%= f.label :status %></div>
+    <div class="col-md-4"><%= f.check_box :status %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :location %>
-    <%= f.text_area :location, rows: 20, cols: 20 %>
+  <div class="field row">
+    <div class="col-md-2"><%= f.label :location %></div>
+    <div class="col-md-4"><%= f.collection_select :location, Value::LOCATIONS, :to_s , :to_s , :include_blank => true %> </div>
   </div>
 
-  <div class="field">
-    <%= f.label :date %>
-    <%= f.date_select :date %>
+  <div class="field row">
+    <div class="col-md-2"><%= f.label :date %></div>
+    <div class="col-md-4"><%= f.date_select :date %></div>
   </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>
 <% end %>
 </div>

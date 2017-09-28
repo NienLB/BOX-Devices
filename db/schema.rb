@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(version: 20170923044309) do
   create_table "devices", force: :cascade do |t|
     t.text     "id_code"
     t.string   "name"
-    t.decimal  "price",      precision: 8, scale: 2
+    t.decimal  "price"
     t.string   "vendor"
     t.boolean  "status"
     t.text     "location"
     t.date     "date"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

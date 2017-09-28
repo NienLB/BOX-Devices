@@ -3,7 +3,7 @@
 
 <h1>List Of Devices</h1>
 <div class="list">
-<table class="container">
+<table class="container table">
   <thead>
     <tr>
       <th>Device code</th>
@@ -22,7 +22,7 @@
       <tr>
         <td><%= device.id_code %></td>
         <td><%= device.name %></td>
-        <td><%= device.price %></td>
+        <td><%= number_to_currency(device.price ,precision:0, unit: "vnd", separator: ",", delimiter: ".", format: "%n %u") %></td>
         <td><%= device.vendor %></td>
         <td><%= device.status %></td>
         <td><%= device.location %></td>
