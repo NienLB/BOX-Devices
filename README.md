@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# BOX-Devices
+Demo project for manage Devices in Boxshop
+>>>>>>> 0971883b2595541ba5f70badd427e62ed9d57e6c
