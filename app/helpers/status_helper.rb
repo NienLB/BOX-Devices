@@ -1,11 +1,11 @@
 module StatusHelper
-	 def display_status(status)
+	def display_status(status)
   	(status==true) ? image_tag('check.png') : image_tag('uncheck.png')
-  end
+  	end
 
-  private
-  def image(name)
-  	"~/assets/images/#{name}%>"
+	private
+	def image(name)
+	  	"~/assets/images/#{name}%>"
 	end
 
 
