@@ -15,11 +15,16 @@
  */
 
 @import "bootstrap";
-nav.navbar.navbar-default{
+nav.navbar.navbar-inverse{
 	background-color: black;
 
-	a{
+	.navbar-brand{
 		padding: 0px;
+		margin-right: 20px;
 	}
-
+	a {
+		font-family: courier;
+		font-size: auto;
+		font-style: bold;
+	}
 }

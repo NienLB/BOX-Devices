@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170923044309) do
+ActiveRecord::Schema.define(version: 20170930043836) do
 
   create_table "devices", force: :cascade do |t|
     t.text     "id_code"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20170923044309) do
     t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "quantity"
+  end
+
+  create_table "type_devices", force: :cascade do |t|
+    t.integer  "devices_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["devices_id"], name: "index_type_devices_on_devices_id"
   end
 
 end

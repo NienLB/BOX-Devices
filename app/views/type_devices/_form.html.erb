@@ -1,0 +1,22 @@
+<%= form_for(type_device) do |f| %>
+  <% if type_device.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(type_device.errors.count, "error") %> prohibited this type_device from being saved:</h2>
+
+      <ul>
+      <% type_device.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :devices_id %>
+    <%= f.text_field :devices_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

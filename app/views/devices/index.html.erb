@@ -24,7 +24,8 @@
         <td><%= device.name %></td>
         <td><%= number_to_currency(device.price ,precision:0, unit: "vnd", separator: ",", delimiter: ".", format: "%n %u") %></td>
         <td><%= device.vendor %></td>
-        <td><%= device.status %></td>
+        <td id='img_check'>
+              <%= display_status(device.status)%></td>
         <td><%= device.location %></td>
         <td><%= device.date %></td>
 
