@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170930043836) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "devices", force: :cascade do |t|
     t.text     "id_code"
     t.string   "name"
@@ -29,7 +32,8 @@ ActiveRecord::Schema.define(version: 20170930043836) do
     t.integer  "devices_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["devices_id"], name: "index_type_devices_on_devices_id"
+    t.index ["devices_id"], name: "index_type_devices_on_devices_id", using: :btree
   end
 
+  add_foreign_key "type_devices", "devices", column: "devices_id"
 end
