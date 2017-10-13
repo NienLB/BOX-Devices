@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :type_devices
   root 'status#index', as: 'status_index'
 
   resources :devices
