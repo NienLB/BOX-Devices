@@ -6,6 +6,6 @@
 //= require popper
 //= require bootstrap-sprockets
 
-$(document).ready(fuction() {
-	$('[data-toggle="tooltip"]').tooltip()
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
 });

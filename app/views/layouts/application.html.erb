@@ -9,19 +9,18 @@
   </head>
 
   <body>
-  	<nav class="navbar navbar-default">
+  	<nav class="navbar navbar-inverse">
   		<div class="container">
   			<div class="navbar-header">
 
-  				<a class="navbar-brand" href="localhost:3000/devices">
-  					<%= image_tag 'logo.png',alt: 'BOXSHOP' %>
-  				</a>
+  				<%= link_to image_tag('logo.png' , alt: 'Boxshop'), {action: 'index', controller: 'status'}, {class: "navbar-brand"} %> 
+  				
   				
   			</div>
 
   			<ul class="nav navbar-nav">
-  				<li class="active"><a href="http://localhost:3000"> Home </a></li>
-  				<li> <a href="http://localhost:3000/devices">List Devices</a></li>
+  				<li class="active"><%= link_to "Home", status_index_path %> </li>
+  				<li> <%= link_to "List", devices_path %> </li>
   				<li> <a href="#">...</a> </li>
   			</ul>
 
