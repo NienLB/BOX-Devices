@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'admin/index'
+
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
+  resources :users
   resources :type_devices
   root 'status#index', as: 'status_index'
 
