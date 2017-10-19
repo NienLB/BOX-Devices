@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Devices Of BOXSHOP</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Devices Of BOXSHOP</title>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Devices in BoxShop">
+  <meta name="author" content="hi@boxshop.vn">
+  <%= stylesheet_link_tag    'vendor', media: 'all' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>  
+</head>
 
-  <body>
-  	<nav class="navbar navbar-inverse">
-  		<div class="container">
-  			<div class="navbar-header">
+<body>
+  <%= render "layouts/navbar" %>
 
-  				<%= link_to image_tag('logo.png' , alt: 'Boxshop'), {action: 'index', controller: 'status'}, {class: "navbar-brand"} %> 
-  				
-  				
-  			</div>
+  <%= yield %>
 
-  			<ul class="nav navbar-nav">
-  				<li class="active"><%= link_to "Home", status_index_path %> </li>
-  				<li> <%= link_to "List", devices_path %> </li>
-  				<li> <%= link_to "User", users_path %> </li>
-  			</ul>
+  <footer>
+    <div class="container-fluid text-right">
+      Boxshop Devices <a href="https://boxshop.vn">Boxshop.vn</a>
+    </div>
+  </footer>
 
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>
+  window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')
+  </script>
+  <%= javascript_include_tag 'vendor' %>
+  <%= javascript_include_tag 'application' %>
+</body>
 
-
-  		</div>
-  	</nav>
-    <%= yield %>
-  </body>
-	<footer class="container-fluid bg-4 text-right">
-  		<p>Boxshop Devices <a href="https://boxshop.vn">Boxshop.vn</a></p> 
-	</footer>
 </html>
