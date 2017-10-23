@@ -1,5 +1,5 @@
 class TypeDevicesController < ApplicationController
-  before_action :authorize
+ 
   before_action :set_type_device, only: [:show, :edit, :update, :destroy]
 
   # GET /type_devices
