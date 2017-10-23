@@ -1,43 +1,44 @@
-<p id="notice"><%=notice%></p>
-
+<p id="notice">
+  <%=notice%>
+</p>
 <div class="container">
-<h1>STATUS DEVICES IN BOX</h1>
-<h3> Status - <%= Date.today %></h3>
-
-
-
-	<div class="entry">
-		<table class="table">
-			<thead>
-				<tr>
-					<th></th>
-					<th>Name</th>
-					<th>Location</th>
-					<th></th>
-				</tr>
-			</thead>
-
-			<tbody>
-				
-				<% @devices.each do |device| %>
-		
-					<tr>
-						<td id='img_check'>
-							<a href="#" data-toggle="tooltip" data-placement="top" title=""> <%= display_status(device.status)%> </a>
-								
-						</td>
-						<td> <%= device.name %></td>
-						<td> <%= device.location %>
-						 </td>
-						 <td> <%= link_to 'Show',device%>
-						 </td>
-					</tr>
-				<% end %>
-
-			</tbody>
-
-		</table>
-
-	</div>
-
+  <h1>STATUS DEVICES IN BOX</h1>
+  <h3> Status - <%= @time %></h3>
+  <div class="entry">
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Created at</th>
+         	<th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @devices.each do |device| %>
+          <tr>
+            <td id='img_check'>
+              <!-- <a href="#" data-toggle="tooltip" data-placement="top" title="">
+                <%= display_status(device.status)%>
+              </a> -->
+            </td>
+            <td>
+              <%= device.name %>
+            </td>
+            <td>
+              <%= device.location %>
+            </td>
+            
+            <td>
+            	<span class="time_ago"><%=device.created_at %></span>
+            </td>
+            <td>
+              <%= link_to 'Show',device%>
+            </td>
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
