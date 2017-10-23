@@ -1,0 +1,17 @@
+{
+  "name": "box-devices",
+  "homepage": "https://github.com/NienLB/BOX-Devices",
+  "authors": [
+    "Nien Luong <tatsuyanin@gmail.com>"
+  ],
+  "description": "A projects for description devices in BoxShop",
+  "main": "box-device",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
