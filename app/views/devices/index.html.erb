@@ -12,6 +12,7 @@
       <th>Vendor</th>
       <th>Status</th>
       <th>Location</th>
+      <th>Category</th>
       <th>Date</th>
       <th colspan="3"></th>
     </tr>
@@ -27,6 +28,7 @@
         <td id='img_check'><a href="#" data-toogle="tooltip" data-placement="top" title="Hooray!">
               <%= display_status(device.status)%></a></td>
         <td><%= device.location %></td>
+        <td><%= device.category_name %></td>
         <td><%= device.date %></td>
 
 

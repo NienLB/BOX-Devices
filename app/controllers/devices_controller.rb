@@ -1,11 +1,12 @@
 class DevicesController < ApplicationController
 
   before_action :set_device, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:new, :create, :edit, :update]
 
   # GET /devices
   # GET /devices.json
   def index
-    @devices = Device.all
+    @devices = Device.includes(:category).all
   end
 
   # GET /devices/1
@@ -63,6 +64,11 @@ class DevicesController < ApplicationController
   end
 
   private
+    # Get list of category
+    def set_category
+      @category = Category.list.map { |c| [c.name, c.id]  }
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_device
       @device = Device.find(params[:id])
@@ -70,6 +76,6 @@ class DevicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def device_params
-      params.require(:device).permit(:id_code, :name, :price, :vendor, :status, :location, :date)
+      params.require(:device).permit(:id_code, :name, :price, :vendor, :status, :location, :date, :category_id)
     end
 end

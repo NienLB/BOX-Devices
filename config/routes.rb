@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :categories
+  resources :vendors
   get 'admin' => 'admin#index'
 
   controller :sessions do

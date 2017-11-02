@@ -24,6 +24,11 @@
   </div>
 
   <div class="field row">
+    <div class="col-md-2"><%= f.label :category %></div>
+    <div class="col-md-4"><%= f.select :category_id, @category %></div>
+  </div>
+
+  <div class="field row">
     <div class="col-md-2"><%= f.label :price %></div>
     <div class="col-md-4"><%= f.text_field :price, rows: 20 %></div>
   </div>

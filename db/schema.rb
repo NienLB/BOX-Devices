@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171016041801) do
+ActiveRecord::Schema.define(version: 20171102071403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "code"
+    t.string   "name"
+    t.integer  "priority",    default: 0
+    t.text     "description"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["code"], name: "index_categories_on_code", using: :btree
+  end
 
   create_table "devices", force: :cascade do |t|
     t.text     "id_code"
@@ -23,9 +33,10 @@ ActiveRecord::Schema.define(version: 20171016041801) do
     t.boolean  "status"
     t.text     "location"
     t.date     "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "quantity"
+    t.integer  "category_id"
   end
 
   create_table "type_devices", force: :cascade do |t|
@@ -42,5 +53,16 @@ ActiveRecord::Schema.define(version: 20171016041801) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "vendors", force: :cascade do |t|
+    t.integer  "device_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "address"
+    t.integer  "contact"
+    t.string   "name"
+    t.index ["device_id"], name: "index_vendors_on_device_id", using: :btree
+  end
+
   add_foreign_key "type_devices", "devices", column: "devices_id"
+  add_foreign_key "vendors", "devices"
 end
