@@ -1,4 +1,4 @@
-<div class="container">
+
 <%= form_for(vendor) do |f| %>
   <% if vendor.errors.any? %>
     <div id="error_explanation">
@@ -12,13 +12,49 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :device_id %>
-    <%= f.text_field :device_id %>
+    <div class="row">
+    
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :name %><abbr class="text-danger">*</abbr>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="form-group">
+        <%= f.label :phone %><abbr class="text-danger">*</abbr>
+        <%= f.text_field :phone, class: "form-control" %>
+        <small class="form-text text-muted">Contact</small>
+      </div>
+    </div>
+  </div>
+
+   <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :type_vendor %>
+        <%= f.select(:type_vendor, Vendor::TYPE_LIST, {},{class: "form-control" }) %>
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :address %>
+        <%= f.text_field :address, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+    </div>
   </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-</div>

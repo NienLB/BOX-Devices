@@ -1,24 +1,34 @@
-<div class="container">
+
 <p id="notice"><%= notice %></p>
 
 <h1>Vendors</h1>
 
-<table>
+<table  class="table table-hover">
   <thead>
     <tr>
-      <th>Device</th>
+      <th>Vendor</th>
       <th colspan="3"></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+
     </tr>
   </thead>
 
   <tbody>
     <% @vendors.each do |vendor| %>
       <tr>
-        <td><%= vendor.device %></td>
-        <td><%= vendor.name%></td>
+        <td><%= vendor.name %></td>
+        <td><%= vendor.phone %></td>
+        <td><%= vendor.address %></td>
+        <td><%= vendor.description %></td>
+        <td><%= vendor.type_vendor %></td>
         <td><%= link_to 'Show', vendor %></td>
         <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
-        <td><%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy' ,vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +37,3 @@
 <br>
 
 <%= link_to 'New Vendor', new_vendor_path %>
-</div>

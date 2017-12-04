@@ -1,6 +1,6 @@
 module StatusHelper
 	def display_status(status)
-  		(status==true) ? image_tag('check.png') : image_tag('uncheck.png')
+  		(status==true) ? image_tag("check.gif", :title => "Good")  : image_tag('service-disruption.gif',  :title => "Failed")
   	end
 
 	private

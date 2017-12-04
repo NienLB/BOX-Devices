@@ -54,7 +54,9 @@ class VendorsController < ApplicationController
   # DELETE /vendors/1
   # DELETE /vendors/1.json
   def destroy
+    @vendor = Vendor.find(params[:id])
     @vendor.destroy
+    
     respond_to do |format|
       format.html { redirect_to vendors_url, notice: 'Vendor was successfully destroyed.' }
       format.json { head :no_content }
@@ -69,6 +71,6 @@ class VendorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vendor_params
-      params.require(:vendor).permit(:device_id)
+      params.require(:vendor).permit(:name, :phone, :address, :type_vendor , :description)
     end
 end

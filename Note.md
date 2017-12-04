@@ -1,5 +1,7 @@
-------2017-09-13-----
-*Create Box-devices
-*Insert/Update/Delete
-*Validates
+----NoTe---
+
+21/11/2017
+---Install package _ Link ---
+*  devise _ https://github.com/plataformatec/devise 
 *
+

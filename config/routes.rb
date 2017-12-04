@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  devise_for :models
   resources :categories
   resources :vendors
   get 'admin' => 'admin#index'
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :type_devices
+
   root 'status#index', as: 'status_index'
 
   resources :devices

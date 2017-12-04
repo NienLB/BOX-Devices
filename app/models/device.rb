@@ -1,7 +1,10 @@
 class Device < ApplicationRecord
 
+
+LOCATIONS = ['BOX1' , 'BOX2' , 'BOX3' , 'BOX4' , 'OFFICE']
   # scope
   # relationships
+  belongs_to :vendor
   belongs_to :category
 	has_many :type_devices
   # validation
@@ -12,11 +15,9 @@ class Device < ApplicationRecord
     category.nil? ? "N/A" : category.name
   end
 
-
-end
-
-class Value < ActiveRecord::Base
-	
-	LOCATIONS = ['BOX1' , 'BOX2' , 'BOX3' , 'BOX4' , 'OFFICE']
+  def vendor_name
+    vendor.nil? ? "China" : vendor.name
+    
+  end
 
 end

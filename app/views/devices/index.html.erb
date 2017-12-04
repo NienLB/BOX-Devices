@@ -24,9 +24,9 @@
         <td><%= device.id_code %></td>
         <td><%= device.name %></td>
         <td><%= number_to_currency(device.price ,precision:0, unit: "vnd", separator: ",", delimiter: ".", format: "%n %u") %></td>
-        <td><%= device.vendor %></td>
-        <td id='img_check'><a href="#" data-toogle="tooltip" data-placement="top" title="Hooray!">
-              <%= display_status(device.status)%></a></td>
+        <td><%= device.vendor_name %></td>
+        <td id='img_check'>
+              <%= display_status(device.status)%></td>
         <td><%= device.location %></td>
         <td><%= device.category_name %></td>
         <td><%= device.date %></td>

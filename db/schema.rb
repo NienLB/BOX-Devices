@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171102071403) do
+ActiveRecord::Schema.define(version: 20171202033723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20171102071403) do
     t.text     "id_code"
     t.string   "name"
     t.decimal  "price"
-    t.string   "vendor"
     t.boolean  "status"
     t.text     "location"
     t.date     "date"
@@ -37,6 +36,24 @@ ActiveRecord::Schema.define(version: 20171102071403) do
     t.datetime "updated_at",  null: false
     t.integer  "quantity"
     t.integer  "category_id"
+    t.integer  "vendor_id"
+  end
+
+  create_table "models", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_models_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "type_devices", force: :cascade do |t|
@@ -49,20 +66,33 @@ ActiveRecord::Schema.define(version: 20171102071403) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "vendors", force: :cascade do |t|
-    t.integer  "device_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "address"
-    t.integer  "contact"
+    t.string   "phone"
     t.string   "name"
-    t.index ["device_id"], name: "index_vendors_on_device_id", using: :btree
+    t.string   "code"
+    t.string   "description"
+    t.string   "type_vendor"
+    t.index ["code"], name: "index_vendors_on_code", using: :btree
   end
 
   add_foreign_key "type_devices", "devices", column: "devices_id"
-  add_foreign_key "vendors", "devices"
 end

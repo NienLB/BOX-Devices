@@ -12,50 +12,80 @@
     </div>
   <% end %>
 
-<div class="form_control">
-  <div class="field row">
-    <div class="col-sm-2"><%= f.label :id_code %></div>
-    <div class="col-sm-4"><%= f.text_field :id_code %> </div>
+<form>
+  <div class="row">
+      <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :id_code %><abbr class="text-danger">*</abbr>
+        <%= f.text_field :id_code, class: "form-control" %>
+        <small class="form-text text-muted">Unique string</small>
+      </div>
+    </div>
+       <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :name %><abbr class="text-danger">*</abbr>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :category %>
+        <%= f.select(:category_id, @category, {} , { class: "form-control" })  %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :price %> <abbr class="text-danger">*</abbr>  
+        <%= f.text_field :price, rows: 20, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+         <div class="form-group">
+        <%= f.label :vendor %>
+        <%= f.select(:vendor_id, @vendor, {}  , { class: "form-control" })  %>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-4">
+         <div class="form-group">
+        <%= f.label :status %> 
+
+        <%= f.check_box :status,  class: "form-control"    %>
+      </div>
+    </div>
+
+    </div>
+      <div class="row">
+    <div class="col-md-4">
+         <div class="form-group">
+        <%= f.label :location %>&nbsp;&nbsp;&nbsp;&nbsp;
+        <%= f.select(:location, Device::LOCATIONS, {}, { class: "form-control" }) %> 
+      </div>
+    </div>
+
+    </div>
+          <div class="row">
+    <div class="col-md-12">
+         <div class="form-group">
+        <%= f.label :date %>&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="form-inline"><%= f.date_select(:date,{}, { class: "form-control inline-block"}) %></div> 
+         </div>
+    </div>
+
+    </div>
+    <div class="actions">
+    <%= f.submit "Save", class: "btn btn-primary" %>
   </div>
 
-  <div class="field row">
-    <div class="col-md-2"><%= f.label :name %></div>
-    <div class="col-md-4"><%= f.text_field :name, rows: 20 %></div>
+        
+  </div>
   </div>
 
-  <div class="field row">
-    <div class="col-md-2"><%= f.label :category %></div>
-    <div class="col-md-4"><%= f.select :category_id, @category %></div>
-  </div>
+</form>
 
-  <div class="field row">
-    <div class="col-md-2"><%= f.label :price %></div>
-    <div class="col-md-4"><%= f.text_field :price, rows: 20 %></div>
-  </div>
 
-  <div class="field row">
-    <div class="col-md-2"><%= f.label :vendor %></div>
-    <div class="col-md-4"><%= f.text_field :vendor, rows: 20 %></div>
-  </div>
-
-  <div class="field row">
-    <div class="col-md-2"><%= f.label :status %></div>
-    <div class="col-md-4"><%= f.check_box :status %></div>
-  </div>
-
-  <div class="field row">
-    <div class="col-md-2"><%= f.label :location %></div>
-    <div class="col-md-4"><%= f.collection_select :location, Value::LOCATIONS, :to_s , :to_s , :include_blank => true %> </div>
-  </div>
-
-  <div class="field row">
-    <div class="col-md-2"><%= f.label :date %></div>
-    <div class="col-md-4"><%= f.date_select :date %></div>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-</div>
 <% end %>
 </div>
