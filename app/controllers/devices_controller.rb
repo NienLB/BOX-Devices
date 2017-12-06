@@ -74,6 +74,10 @@ class DevicesController < ApplicationController
     def set_vendor
       @vendor = Vendor.list.map { |c| [c.name, c.id]  }
     end
+    def new_vendor
+      @new_vendor = Vendor.new
+    end
+
 
     # Use callbacks to share common setup or constraints between actions.
     def set_device
@@ -84,4 +88,5 @@ class DevicesController < ApplicationController
     def device_params
       params.require(:device).permit(:id_code, :name, :price, :vendor_id, :status, :location, :date, :category_id)
     end
+ 
 end

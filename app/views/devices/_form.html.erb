@@ -48,14 +48,17 @@
               <div class="form-group">
                 <%= f.label :vendor %>
                   <%= f.select(:vendor_id, @vendor, {}  , { class: "form-control" })  %>
+             <!--  -->
               </div>
+
+               
             </div>
           </div>
           <div class="row">
             <div class="col-md-4">
               <div class="form-group">
                 <%= f.label :status %>
-                  <%= f.check_box :status,  class: "form-control"    %>
+                    <%= f.select(:status, Device::STATUS_OPTIONS, {}, { class: "form-control" }) %>
               </div>
             </div>
           </div>
@@ -80,8 +83,9 @@
           <div class="actions">
             <%= f.submit "Save", class: "btn btn-primary" %>
           </div>
-</div>
-</div>
-</form>
+          </form>
+
 <% end %>
 </div>
+
+

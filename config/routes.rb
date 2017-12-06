@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :vendors
   get 'admin' => 'admin#index'
-
+  get "vendors/new" => 'vendors#new', :as => :new_vendors
   controller :sessions do
   	get 'login' => :new
   	post 'login' => :create
