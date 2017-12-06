@@ -34,7 +34,12 @@
 
 <p>
   <strong>Import_Date:</strong>
-  <%= @device.date %>
+  <%= @device.usage_date %>
+</p>
+
+<p>
+  <strong>Warranty_Date:</strong>
+  <%= @device.warranty_date %>
 </p>
 
 <%= link_to 'Edit', edit_device_path(@device) %> |

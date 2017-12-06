@@ -13,7 +13,8 @@
       <th>Status</th>
       <th>Location</th>
       <th>Category</th>
-      <th>Date</th>
+      <th>Usage Date</th>
+      <th>Warranty Date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -29,7 +30,8 @@
               <%= display_status(device.status_name)%></td>
         <td><%= device.location %></td>
         <td><%= device.category_name %></td>
-        <td><%= device.date %></td>
+        <td><%= device.usage_date %></td>
+        <td><%= device.warranty_date %></td>
 
 
         <td class="list_actions">
