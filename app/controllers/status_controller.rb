@@ -1,5 +1,5 @@
 class StatusController < ApplicationController
-
+  before_action :authenticate_user!
   
   def index
     @time = Date.today

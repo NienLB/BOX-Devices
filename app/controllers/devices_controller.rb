@@ -1,5 +1,5 @@
 class DevicesController < ApplicationController
-
+  before_action :authenticate_user!
   before_action :set_device, only: [:show, :edit, :update, :destroy]
   before_action :set_category, only: [:new, :create, :edit, :update]
   before_action :set_vendor, only: [:new, :create, :edit, :update]

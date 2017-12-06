@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
   $('.time_ago').each(function(i) {
     var time = moment($(this).text());
@@ -5,3 +6,4 @@ $(document).ready(function() {
     $(this).attr('title', time.format('DD/MM/YYYY, h:mm:ss a'));
   });
 });
+
