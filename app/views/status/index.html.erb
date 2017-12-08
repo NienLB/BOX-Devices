@@ -12,6 +12,7 @@
           <th>Name</th>
           <th>Location</th>
           <th>Created at</th>
+          <th>Updated at</th>
          	<th></th>
         </tr>
       </thead>
@@ -33,6 +34,11 @@
             <td>
             	<span class="time_ago"><%=device.created_at %></span>
             </td>
+
+            <td>
+              <span class="time_ago"><%=device.updated_at %></span>
+            </td>
+
             <td>
               <%= link_to 'Show',device%>
             </td>

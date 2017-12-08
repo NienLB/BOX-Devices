@@ -15,7 +15,22 @@
           <li class="nav-item<%= request.original_url.include?('categories') ? ' active' : '' %>">
             <%= link_to "Categories", categories_path, {class: "nav-link"} %>
           </li>
+          <li class="nav-item">
+            <%= link_to "Vendors", vendors_path, {class: "nav-link"} %>
+          </li>
+          <!--   <li class="nav-item pull-right">
+             
+          </li> -->
+            
         </ul>
+        <span class="color_mems pull-right">
+     <% if user_signed_in? %>
+                <div class = "nav-link" > Welcome
+                  <%= current_user.name %> &nbsp
+                  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                </div>
+                <% end %>
+            </span>
       </div>
   </nav>
 </div>
