@@ -1,12 +1,11 @@
 class SessionsController < ApplicationController
-
-
   def new
   end
 
   def create
   	super do |resource|
       BackgroundWorker.trigger(resource)
+    end
   end
 
   def destroy
