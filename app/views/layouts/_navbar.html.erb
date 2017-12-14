@@ -7,8 +7,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navMain">
         <ul class="navbar-nav mr-auto">
+   <% if user_signed_in? %>
           <li class="nav-item">
-
           </li>
           <li class="nav-item">
             <%= link_to "Devices", devices_path, {class: "nav-link"} %>
@@ -22,7 +22,7 @@
           <!--   <li class="nav-item pull-right">
              
           </li> -->
-            
+            <% end %>
         </ul>
         <span class="color_mems pull-right">
      <% if user_signed_in? %>
