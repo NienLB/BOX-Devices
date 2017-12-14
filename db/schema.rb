@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171214075045) do
+ActiveRecord::Schema.define(version: 20171214080036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20171214075045) do
     t.string   "name"
     t.string   "code"
     t.string   "description"
+    t.string   "type_vendor"
     t.index ["code"], name: "index_vendors_on_code", using: :btree
   end
 
