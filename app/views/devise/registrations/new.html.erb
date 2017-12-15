@@ -5,7 +5,7 @@
 
  <div class="field">
     <%= f.label :name %><br />
-    <%= f.email_field :name, autofocus: true %>
+    <%= f.text_field :name, autofocus: true %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
@@ -24,6 +24,12 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+    <div class="field">
+    <%= f.label :admin %><br />
+    <%= f.check_box :admin, autocomplete: "off" %>
+  </div>
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>
