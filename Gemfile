@@ -41,12 +41,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Application
 gem 'bower-rails', '~> 0.11.0'
-
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
- 
-# Authentication system with devise
-gem 'devise'
+gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
+gem 'devise' # Authentication system with devise
+gem 'simple_form'
+gem 'slim'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

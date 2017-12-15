@@ -1,5 +1,5 @@
 
-<%= form_for(vendor) do |f| %>
+<%= simple_form_for(vendor) do |f| %>
   <% if vendor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(vendor.errors.count, "error") %> prohibited this vendor from being saved:</h2>
@@ -12,12 +12,10 @@
     </div>
   <% end %>
 
-    <div class="row">
-    
+    <div class="row"> 
     <div class="col-md-4">
       <div class="form-group">
-        <%= f.label :name %><abbr class="text-danger">*</abbr>
-        <%= f.text_field :name, class: "form-control" %>
+        <%= f.input :name, hint: 'Unique value' %>
       </div>
     </div>
     <div class="col-md-8">

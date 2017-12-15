@@ -1,0 +1,28 @@
+p#notice
+  = notice
+
+.container
+  h1 STATUS DEVICES IN BOX
+  h3 Status - #{ @time }
+
+  .entry
+    table.table
+      thead
+        tr
+          th
+          th Name
+          th Location
+          th Created at
+          th Updated at
+          th
+      tbody
+        - @devices.each do |device|
+          tr
+            td#img_check = display_status(device.status_name)
+            td = device.name
+            td = device.location
+            td
+              span.time_ago = device.created_at
+            td
+              span.time_ago = device.updated_at
+            td = link_to 'Show',device
