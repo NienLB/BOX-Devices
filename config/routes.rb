@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :locations
   devise_for :admins
   devise_for :users, controller: { sessions: 'users/sessions'}
+
   devise_for :models
   resources :categories
   resources :vendors
