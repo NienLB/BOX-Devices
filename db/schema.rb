@@ -88,10 +88,10 @@ ActiveRecord::Schema.define(version: 20171215032353) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "address"
-    t.string   "phone"
+    t.string   "contact"
     t.string   "name"
     t.string   "code"
-    t.string   "description"
+    t.string   "phone"
     t.string   "type_vendor"
     t.index ["code"], name: "index_vendors_on_code", using: :btree
   end
